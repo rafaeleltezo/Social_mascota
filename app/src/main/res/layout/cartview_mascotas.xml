@@ -5,6 +5,7 @@
     android:layout_height="@dimen/largoCarta"
     android:padding="@dimen/activity_horizontal_margin"
     android:layout_marginBottom="120dp"
+    android:elevation="8dp"
     >
 
     <ImageView
