@@ -6,8 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.rafaelp.socialmascotas.MejoresMascotas">
     <include
-        layout="@layout/navegacion">
+        layout="@layout/navegacion"
+        android:id="@+id/navegacionMejores">
 
     </include>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/navegacionMejores">
+
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

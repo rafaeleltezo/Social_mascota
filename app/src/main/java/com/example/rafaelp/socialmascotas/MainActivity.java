@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         reciclar.setLayoutManager(new LinearLayoutManager(this));
         reciclar.setAdapter(new Adaptador(mascota,this));
         intento=new Intent(this,MejoresMascotas.class);
+
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
