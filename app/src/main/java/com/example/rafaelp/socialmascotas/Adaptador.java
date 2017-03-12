@@ -2,8 +2,10 @@ package com.example.rafaelp.socialmascotas;
 
 import android.app.Activity;
 import android.provider.ContactsContract;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -29,8 +31,31 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.AdaptadorHolder> {
 
     @Override
     public AdaptadorHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.cartview_mascotas,parent,false);
-        actividad.registerForContextMenu(vista);
+        final View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.cartview_mascotas,parent,false);
+        //actividad.registerForContextMenu(vista);
+        vista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu menupop=new PopupMenu(actividad,vista);
+                menupop.inflate(R.menu.menu_opciones);
+                menupop.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.editar:
+                                Toast.makeText(actividad,"Editado",Toast.LENGTH_SHORT).show();
+                                break;
+                            case R.id.eliminar:
+                                Toast.makeText(actividad,"Eliminado",Toast.LENGTH_SHORT).show();
+                        }
+
+                        return false;
+                    }
+                });
+                menupop.show();
+
+            }
+        });
         return new AdaptadorHolder(vista);
     }
 
