@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView reciclar;
-    ArrayList<Mascota>mascota;
     Intent intento;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(barra);
         reciclar=(RecyclerView) findViewById(R.id.Reciclar);
         ImageView siguiente=(ImageView)findViewById(R.id.siguiente);
-        datos();
         reciclar.setLayoutManager(new LinearLayoutManager(this));
-        reciclar.setAdapter(new Adaptador(mascota,this));
+        reciclar.setAdapter(new Adaptador(Datos.datos(),this));
         intento=new Intent(this,MejoresMascotas.class);
 
         siguiente.setOnClickListener(new View.OnClickListener() {
@@ -38,16 +36,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void datos(){
-        mascota=new ArrayList<>();
-        mascota.add(new Mascota("Putti",0,R.drawable.dog_150920_640));
-        mascota.add(new Mascota("persi",0,R.drawable.dog_150923_640));
-        mascota.add(new Mascota("Mascota",0,R.drawable.dog_150963_640));
-        mascota.add(new Mascota("martiri",0,R.drawable.mascota));
-        mascota.add(new Mascota("camila",0,R.drawable.mascota_kawaii));
-        mascota.add(new Mascota("cami",0,R.drawable.dog_150963_640));
-        mascota.add(new Mascota("Pusi",0,R.drawable.dog_150923_640));
+
 
 
     }
-}
+
