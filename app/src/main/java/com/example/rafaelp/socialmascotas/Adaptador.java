@@ -30,6 +30,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.AdaptadorHolder> {
     @Override
     public AdaptadorHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View vista= LayoutInflater.from(parent.getContext()).inflate(R.layout.cartview_mascotas,parent,false);
+        actividad.registerForContextMenu(vista);
         return new AdaptadorHolder(vista);
     }
 
