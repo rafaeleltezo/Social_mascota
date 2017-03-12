@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Social Petagram</string>
+    <string name="mEditar">Editar</string>
+    <string name="mEliminar">Eliminar</string>
 
 </resources>
